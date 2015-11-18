@@ -1,0 +1,31 @@
+{
+  "schools": [
+    {
+      "name": "University of Neuchâtel",
+      "location": "Neuchâtel, Switzerland",
+      "degree": "Master of science",
+      "majors": [
+        "Biology"
+      ],
+      "dates": "1996",
+      "url": ""
+    },
+    {
+      "name": "University of Neuchâtel",
+      "location": "Neuchâtel, Switzerland",
+      "degree": "Diplôme postgrade",
+      "majors": [
+        "Statistics"
+      ],
+      "dates": "1996",
+      "url": ""
+    }
+  ],
+  "onlineCourses": {
+    "title": "Front-End Web Developer Nanodegree",
+    "school": "Udacity",
+    "date": "2015",
+    "url": "http://udacity.com/..."
+  },
+  "display": "function"
+}

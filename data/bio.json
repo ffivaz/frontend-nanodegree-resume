@@ -1,0 +1,20 @@
+{
+  "name": "Fabien Fivaz",
+  "role": "Scientific collaborator",
+  "contacts": {
+    "mobile": "+41 78 740 06 51",
+    "email": "fabien.fivaz@unine.ch",
+    "github": "https://github.com/ffivaz",
+    "twitter": "https://twitter.com/ffivaz",
+    "location": "La Chaux-de-Fonds, Switzerland"
+  },
+  "welcomeMessage": "",
+  "skills": [
+    "modelling",
+    "data mining",
+    "web development",
+    "map servers"
+  ],
+  "biopic": "../images/fry.jpg",
+  "display": ""
+}
