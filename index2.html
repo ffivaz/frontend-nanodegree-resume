@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabien Fivaz | Resume</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:700,300,300italic,700italic&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="js/functions.js"></script>
+</head>
+<body>
+<div id="main" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 transparent"></div>
+    </div>
+    <div class="row">
+        <div id="header" class="col-md-12 black-wrapper"></div>
+    </div>
+</div>
+<div id="navbar-anchor"></div>
+<div class="navbar navbar-inverse black-wrapper" id="navbar">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="#bio"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Biography</a></li>
+            <li><a href="#workExperience"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;Work</a></li>
+            <li><a href="#education"><span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;Education</a></li>
+            <li><a href="#projects"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;Projects</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-fluid black-wrapper" id="bio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 white-wrapper">
+                <h2>Biography</h2>
+                <ul id="topContacts">
+                    <li class="flex-item text-justify">
+                        As a biologist and statistician, I have a long and solid experience in managing and analyzing
+                        very large datasets of ecological data using a wide range of tools: databases, GIS software and
+                        statistical software. I focus on spatial ecology and species distributions for conservation
+                        purposes. I've been recently involved with a lot of software development for the web (check out
+                        http://lepus.unine.ch/carto or http://lepus.unine.ch/zsdb for details).
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid grey-wrapper">
+    <div class="container container-down">
+        <div class="row row-down" id="work">
+            <div id="workExperience" class="col-md-12 white-wrapper">
+                <h2>Work Experience</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="projects" class="col-md-12 white-wrapper">
+                <h2>Projects</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="education" class=" col-md-12 white-wrapper">
+                <h2>Education</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="mapDiv" class="col-md-12 white-wrapper">
+                <h2>Where I've Lived and Worked</h2>
+            </div>
+            <div id="lets-connect" class="dark-gray">
+                <h2 class="orange center-text">Let's Connect</h2>
+                <ul id="footerContacts" class="flex-box">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/resumeBuilder.js"></script>
+<script type="text/javascript">
+
+    if (document.getElementsByClassName('flex-item').length === 0) {
+        document.getElementById('topContacts').style.display = 'none';
+    }
+    if (document.getElementsByTagName('h1').length === 0) {
+        document.getElementById('header').style.display = 'none';
+    }
+    if (document.getElementsByClassName('work-entry').length === 0) {
+        document.getElementById('workExperience').style.display = 'none';
+    }
+    if (document.getElementsByClassName('project-entry').length === 0) {
+        document.getElementById('projects').style.display = 'none';
+    }
+    if (document.getElementsByClassName('education-entry').length === 0) {
+        document.getElementById('education').style.display = 'none';
+    }
+    if (document.getElementsByClassName('flex-item').length === 0) {
+        document.getElementById('lets-connect').style.backgroundColor = 'black';
+    }
+    if (document.getElementById('map') === null) {
+        document.getElementById('mapDiv').style.display = 'none';
+    }
+</script>
+</body>
+</html>

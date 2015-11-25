@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fabien Fivaz | Resume</title>
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:700,300,300italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/helper.js"></script>
-    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 <body>
 <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
 
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
     <div id="header" class="center-content clear-fix">
         <ul id="topContacts" class="flex-box"></ul>
     </div>
@@ -91,7 +87,7 @@ course.
         document.getElementById('education').style.display = 'none';
     }
     if (document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('lets-connect').style.display = 'none';
+        document.getElementById('lets-connect').style.backgroundColor = 'black';
     }
     if (document.getElementById('map') === null) {
         document.getElementById('mapDiv').style.display = 'none';
