@@ -1,7 +1,7 @@
 * {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -31,14 +31,20 @@ h3 small {
     padding: 10px 50px 10px 50px;
 }
 
-.transparent {
+.transparent-top {
     opacity: 0;
-    height: 50vh;
+    height: 33vh;
+}
+
+.transparent-bottom {
+    opacity: 0;
+    height: 7vh;
 }
 
 .black-wrapper {
     background: #000;
     color: lightgrey;
+    padding-bottom: 60px;
 }
 
 .white-wrapper {
@@ -47,6 +53,10 @@ h3 small {
 
 .grey-wrapper {
     background: lightgrey;
+}
+
+.navbar-inverse {
+    background-color: #000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -94,6 +104,7 @@ h3 small {
         border: 0;
         display: flex;
         margin-bottom: 0;
+        z-index: 9999;
     }
 
     .navbar .navbar-nav {
@@ -111,11 +122,69 @@ h3 small {
     color: #000;
 }
 
-.flex-item {
-    list-style-type: none;
-    color: #000;
+.flex-container {
+    display: flex;
+    padding: 20px 20px 0 20px;
+    justify-content: space-between;
 }
 
+.flex-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    color: #000;
+
+}
+
+.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+}
+
+/* Offsetting solution found here ; http://nicolasgallagher.com/jump-links-and-viewport-positioning/ */
 .jumptarget {
-    margin-top: -50px;
+    position: relative;
+    border-top: 25px solid transparent;
+    margin: -50px 0 0;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.jumptarget:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #ccc;
+}
+
+.jumpstart {
+     position: relative;
+     border-top: 25px solid transparent;
+     margin: -80px 0 0;
+     -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+     background-clip: padding-box;
+
+ }
+
+#toTop{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: darkgray;
+    opacity: 0.5;
+    border: 0;
+    color: #fff;
+    z-index: 10000;
+}
+
+#toTop:hover {
+    background-color: darkgray;
+    opacity: 0.8;
 }

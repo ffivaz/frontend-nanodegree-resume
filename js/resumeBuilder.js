@@ -3,60 +3,69 @@
  */
 
 var bio = {
-        "name": "Fabien Fivaz",
-        "role": "Scientific collaborator",
-        "contacts": {
-            "mobile": "+41 78 740 06 51",
-            "email": "fabien.fivaz@unine.ch",
-            "github": "https://github.com/ffivaz",
-            "twitter": "https://twitter.com/ffivaz",
-            "blog": "http://fabienfivaz.ch",
-            "location": "La Chaux-de-Fonds, Switzerland"
+    "name": "Fabien Fivaz",
+    "role": "Scientific collaborator",
+    "contacts": {
+        "email": {
+            "name": "fabien.fivaz@unine.ch",
+            "link": "mailto:fabien.fivaz@unine.ch"
         },
-        "biopic": "images/fabien_fivaz_large.jpg",
-        "skillText": "As a biologist and statistician, I have a long and solid experience in managing and analyzing very large datasets of ecological data using a wide range of tools: databases, GIS software and statistical software. I focus on spatial ecology and species distributions for conservation purposes. I've been recently involved with a lot of software development for the web (check out http://lepus.unine.ch/carto or http://lepus.unine.ch/zsdb for details).",
-        "skills": [
-            "modelling",
-            "data mining",
-            "web development",
-            "map servers"
-        ],
-        display: function () {
-            var formattedName = HTMLheaderName.replace("%data%", bio.name);
-            var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-            var formattedSkillText = HTMLSkillText.replace("%data%", bio.skillText);
-            var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-            var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-            var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-            var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-            var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        "github": {
+            "name": "ffivaz",
+            "link": "https://github.com/ffivaz"
+        },
+        "twitter": {
+            "name": "@ffivaz",
+            "link": "https://twitter.com/ffivaz"
+        },
+        "blog": {
+            "name": "fabienfivaz.ch",
+            "link": "http://fabienfivaz.ch"
+        },
+        "location": "La Chaux-de-Fonds, Switzerland"
+    },
+    "biopic": "images/fabien_fivaz_large.jpg",
+    "skillText": "As a biologist and statistician, I have a long and solid experience in managing and analyzing very large datasets of ecological data using a wide range of tools: databases, GIS software and statistical software. I focus on spatial ecology and species distributions for conservation purposes. I've been recently involved with a lot of software development for the web (check out http://lepus.unine.ch/carto or http://lepus.unine.ch/zsdb for details).",
+    "skills": [
+        "modelling",
+        "data mining",
+        "web development",
+        "map servers"
+    ],
+    display: function () {
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
+        var formattedSkillText = HTMLSkillText.replace("%data%", bio.skillText);
+        var formattedEmail = HTMLemail.replace("%link%", bio.contacts.email.link);
+        formattedEmail = formattedEmail.replace("%name%", bio.contacts.email.name);
+        var formattedTwitter = HTMLtwitter.replace("%link%", bio.contacts.twitter.link);
+        formattedTwitter = formattedTwitter.replace("%name%", bio.contacts.twitter.name);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.link);
+        formattedGithub = formattedGithub.replace("%name%", bio.contacts.github.name)
+        var formattedBlog = HTMLblog.replace("%link%", bio.contacts.blog.link);
+        formattedBlog = formattedBlog.replace("%name%", bio.contacts.blog.name);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-            $("#header").append(formattedBiopic);
-            $("#header").append(formattedName);
-            $("#header").append(formattedLocation);
+        $("#header").append(formattedBiopic);
+        $("#header").append(formattedName);
+        $("#header").append(formattedLocation);
 
-            $("#topContacts").append(formattedBlog);
-            $("#topContacts").append(formattedGithub);
-            $("#topContacts").append(formattedTwitter);
-            $("#topContacts").append(formattedEmail);
-            $("#skillText").append(formattedSkillText);
+        $("#topContacts").append(formattedBlog);
+        $("#topContacts").append(formattedGithub);
+        $("#topContacts").append(formattedTwitter);
+        $("#topContacts").append(formattedEmail);
+        $("#skillText").append(formattedSkillText);
 
-            /*
-             //$("#header").append(formattedRole);
+        function prepareSkills(skill) {
+            formattedSkill = HTMLskills.replace("%data%", skill);
+            $("#skills").append(formattedSkill);
+        }
 
-             function prepareSkills(skill) {
-             formattedSkill = HTMLskills.replace("%data%", skill);
-             $("#skills").append(formattedSkill);
-             }
-
-             if (bio.skills) {
-             $("#header").append(HTMLskillsStart);
-             bio.skills.forEach(prepareSkills);
-             }
-             */
+        if (bio.skills) {
+            bio.skills.forEach(prepareSkills);
         }
     }
-    ;
+};
 
 var educations = {
     "schools": [
@@ -108,7 +117,10 @@ var work = {
     "jobs": [
         {
             "employer": "Centre suisse de cartographie de la faune (CSCF)",
-            "link": "http://www.cscf.ch",
+            "link": {
+                "name": "cscf.ch",
+                "link": "http://www.cscf.ch"
+            },
             "title": "Scientific collaborator",
             "location": "Neuchâtel, Switzerland",
             "dates": "2003 - now",
@@ -116,7 +128,10 @@ var work = {
         },
         {
             "employer": "Centre de coordination pour la protection des amphibiens et des reptiles de Suisse (karch)",
-            "link": "http://www.karch.ch",
+            "link": {
+                "name": "karch.ch",
+                "link": "http://www.karch.ch"
+            },
             "title": "Scientific collaborator",
             "location": "Bern, Switzerland",
             "dates": "2003 - 2006",
@@ -128,7 +143,8 @@ var work = {
         for (job in work.jobs) {
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-            var formattedWorkLink = HTMLworkLink.replace("%data%", work.jobs[job].link);
+            var formattedWorkLink = HTMLworkLink.replace("%link%", work.jobs[job].link.link);
+            formattedWorkLink = formattedWorkLink.replace("%name%", work.jobs[job].link.name);
             var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);

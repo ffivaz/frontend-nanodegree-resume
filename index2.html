@@ -18,68 +18,61 @@
     <script src="js/functions.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar">
+<a id="top"></a>
+
 <div id="main" class="container-fluid">
     <div class="row">
-        <div class="col-md-12 transparent"></div>
+        <div class="col-md-12 col-sm-12 col-xs-12 transparent-top"></div>
     </div>
     <div class="row">
-        <div id="header" class="col-md-12 black-wrapper"></div>
+        <div id="header" class="col-md-12 col-sm-12 col-xs-12 black-wrapper"></div>
     </div>
 </div>
 <div id="navbar-anchor"></div>
-<div class="navbar navbar-inverse black-wrapper" id="navbar">
+<div class="navbar navbar-inverse" id="navbar">
     <div class="container-fluid">
         <ul class="nav navbar-nav" role="tablist">
-            <li><a href="#bio-anchor"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Biography</a></li>
             <li><a href="#work-anchor"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;Work</a></li>
             <li><a href="#project-anchor"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Projects</a></li>
             <li><a href="#education-anchor"><span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;Education</a>
             </li>
+            <li><div id="toTop" class="btn"><i class="glyphicon glyphicon-arrow-up"></i></div></li>
         </ul>
-    </div>
-</div>
-
-<div class="container-fluid black-wrapper" id="bio-anchor">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 white-wrapper" id="bio">
-                <h2>Biography</h2>
-                <ul id="topContacts"></ul>
-                <div id="skillText"></div>
-            </div>
-        </div>
     </div>
 </div>
 
 <div class="container-fluid grey-wrapper">
     <div class="container container-down">
+
+        <div class="row jumpstart">
+            <div class="col-md-12 col-sm-12 col-xs-12 white-wrapper" id="bio">
+                <ul id="topContacts" class="flex-container"></ul>
+                <ul id="skills" class="flex-container">
+                    <li class="flex-item desc-text ">Skills at a Glance: </li>
+                </ul>
+                <div id="skillText"><br></div>
+            </div>
+        </div>
+
         <div class="row jumptarget" id="work-anchor">
-            <div id="workExperience" class="col-md-12 white-wrapper large-margin">
-                <h2>Work Experience</h2>
+            <div id="workExperience" class="col-md-12 col-sm12 col-xs-12 white-wrapper large-margin">
+                <h2>Work</h2>
             </div>
         </div>
 
         <div class="row jumptarget" id="project-anchor">
-            <div id="projects" class="col-md-12 white-wrapper large-margin">
+            <div id="projects" class="col-md-12 col-sm-12 col-xs-12 white-wrapper large-margin">
                 <h2>Projects</h2>
             </div>
         </div>
 
         <div class="row jumptarget" id="education-anchor">
-            <div id="education" class="col-md-12 white-wrapper large-margin">
+            <div id="education" class="col-md-12 col-sm-12 col-xs-12 white-wrapper large-margin">
                 <h2>Education</h2>
             </div>
         </div>
 
-        <div class="row">
-            <div id="mapDiv" class="col-md-12 white-wrapper large-margin">
-                <h2>Where I've Lived and Worked</h2>
-            </div>
-            <div id="lets-connect" class="dark-gray">
-                <h2 class="orange center-text">Let's Connect</h2>
-                <ul id="footerContacts" class="flex-box">
-                </ul>
-            </div>
+        <div class="row grey-wrapper transparent-bottom">
         </div>
     </div>
 </div>

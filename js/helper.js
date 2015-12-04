@@ -5,24 +5,17 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic text-center">';
 var HTMLlocation = '<p class="text-center"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
-var HTMLSkillText = '<p class="flex-item text-justify">%data%</p>';
-
-var HTMLheaderRole = '<span>%data%</span><hr/>';
-
-var HTMLemail = '<li class="flex-item"><span class="desc-text">email</span> <a href="mailto:%data%" class="black-text">%data%</a></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="desc-text">twitter</span> <a href="%data%" class="black-text">%data%</a></li>';
-var HTMLgithub = '<li class="flex-item"><span class="desc-text">github</span> <a href="%data%" class="black-text">%data%</a></li>';
-var HTMLblog = '<li class="flex-item"><span class="desc-text">blog</span> <a href="%data%" class="black-text">%data%</a></li>';
-
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
-
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="desc-text">Email: </span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="desc-text">Twitter: </span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="desc-text">Github: </span> </span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLblog = '<li class="flex-item"><span class="desc-text">Blog: </span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLSkillText = '<p>%data%</p>';
+var HTMLskills = '<li class="flex-item">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<h3>%data%<br>';
 var HTMLworkTitle = ' <small>%data%</small></h3>';
-var HTMLworkLink = '<span class="glyphicon glyphicon-link"></span> <a href="%data%">website</a>';
+var HTMLworkLink = '<span class="glyphicon glyphicon-link"></span> <a href="%link%">%name%</a>';
 var HTMLworkDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
 var HTMLworkLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
