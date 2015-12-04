@@ -5,10 +5,6 @@
     text-align: center;
 }
 
-body {
-    position: relative;
-}
-
 h1 {
     font-weight: 100;
 }
@@ -16,6 +12,11 @@ h1 {
 h2 {
     font-weight: 100;
     color: #000000;
+    border-top: 1px solid black;
+    padding-top: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h3 {
@@ -59,10 +60,26 @@ h3 small {
     background-color: #000;
 }
 
+/* The fixed background image hack is inspired from https://css-tricks.com/crop-top/ */
+
+.bg-image {
+    height: 33vw;
+    width: 100%;
+}
+
+.bg-image-wedding {
+    background-image: url(../images/background_large.jpg);
+
+    -ms-background-position-x: center;
+    -ms-background-position-y: bottom;
+    background-position: center bottom;
+
+    background-size: cover;
+}
+
 @media only screen and (max-width: 768px) {
     body {
-        background: #000 url(../images/background_large.jpg) no-repeat fixed;
-        background-size: 100vw auto;
+        position: relative;
     }
 
     .biopic {
@@ -82,8 +99,8 @@ h3 small {
 
 @media only screen and (min-width: 768px) {
     body {
-        background: #000 url(../images/background_small.jpg) no-repeat fixed;
-        background-size: 100vw auto;
+        position: relative;
+        background-color: lightgray;
     }
 
     .biopic {
