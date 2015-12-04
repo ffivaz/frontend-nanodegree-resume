@@ -5,11 +5,10 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic text-center">';
 var HTMLlocation = '<p class="text-center"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
+var HTMLSkillText = '<p class="flex-item text-justify">%data%</p>';
 
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="desc-text">%contact%</span> <span class="black-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="desc-text">mobile</span> <span class="black-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="desc-text">email</span> <a href="mailto:%data%" class="black-text">%data%</a></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="desc-text">twitter</span> <a href="%data%" class="black-text">%data%</a></li>';
 var HTMLgithub = '<li class="flex-item"><span class="desc-text">github</span> <a href="%data%" class="black-text">%data%</a></li>';
@@ -21,10 +20,11 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkEmployer = '<h3>%data%<br>';
+var HTMLworkTitle = ' <small>%data%</small></h3>';
+var HTMLworkLink = '<span class="glyphicon glyphicon-link"></span> <a href="%data%">website</a>';
+var HTMLworkDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
+var HTMLworkLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
@@ -210,6 +210,6 @@ window.addEventListener('load', initializeMap);
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-  map.fitBounds(mapBounds);
+  //map.fitBounds(mapBounds);
 });
 

@@ -3,60 +3,60 @@
  */
 
 var bio = {
-    "name": "Fabien Fivaz",
-    "role": "Scientific collaborator",
-    "contacts": {
-        "mobile": "+41 78 740 06 51",
-        "email": "fabien.fivaz@unine.ch",
-        "github": "https://github.com/ffivaz",
-        "twitter": "https://twitter.com/ffivaz",
-        "blog": "http://fabienfivaz@unine.ch",
-        "location": "La Chaux-de-Fonds, Switzerland"
-    },
-    "biopic": "images/fabien_fivaz_large.jpg",
-    "welcomeMessage": "Welcome to my page",
-    "skills": [
-        "modelling",
-        "data mining",
-        "web development",
-        "map servers"
-    ],
-    display: function () {
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-        var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-        var formattedWMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        "name": "Fabien Fivaz",
+        "role": "Scientific collaborator",
+        "contacts": {
+            "mobile": "+41 78 740 06 51",
+            "email": "fabien.fivaz@unine.ch",
+            "github": "https://github.com/ffivaz",
+            "twitter": "https://twitter.com/ffivaz",
+            "blog": "http://fabienfivaz.ch",
+            "location": "La Chaux-de-Fonds, Switzerland"
+        },
+        "biopic": "images/fabien_fivaz_large.jpg",
+        "skillText": "As a biologist and statistician, I have a long and solid experience in managing and analyzing very large datasets of ecological data using a wide range of tools: databases, GIS software and statistical software. I focus on spatial ecology and species distributions for conservation purposes. I've been recently involved with a lot of software development for the web (check out http://lepus.unine.ch/carto or http://lepus.unine.ch/zsdb for details).",
+        "skills": [
+            "modelling",
+            "data mining",
+            "web development",
+            "map servers"
+        ],
+        display: function () {
+            var formattedName = HTMLheaderName.replace("%data%", bio.name);
+            var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
+            var formattedSkillText = HTMLSkillText.replace("%data%", bio.skillText);
+            var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+            var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+            var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+            var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+            var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-        $("#header").append(formattedBiopic);
-        $("#header").append(formattedName);
-        $("#header").append(formattedLocation);
+            $("#header").append(formattedBiopic);
+            $("#header").append(formattedName);
+            $("#header").append(formattedLocation);
 
-        $("#topContacts").append(formattedBlog);
-        $("#topContacts").append(formattedGithub);
-        $("#topContacts").append(formattedTwitter);
-        $("#topContacts").append(formattedEmail);
-        $("#topContcats").append(formattedMobile);
-/*
-        //$("#header").append(formattedRole);
+            $("#topContacts").append(formattedBlog);
+            $("#topContacts").append(formattedGithub);
+            $("#topContacts").append(formattedTwitter);
+            $("#topContacts").append(formattedEmail);
+            $("#skillText").append(formattedSkillText);
 
-        function prepareSkills(skill) {
-            formattedSkill = HTMLskills.replace("%data%", skill);
-            $("#skills").append(formattedSkill);
+            /*
+             //$("#header").append(formattedRole);
+
+             function prepareSkills(skill) {
+             formattedSkill = HTMLskills.replace("%data%", skill);
+             $("#skills").append(formattedSkill);
+             }
+
+             if (bio.skills) {
+             $("#header").append(HTMLskillsStart);
+             bio.skills.forEach(prepareSkills);
+             }
+             */
         }
-
-        if (bio.skills) {
-            $("#header").append(HTMLskillsStart);
-            bio.skills.forEach(prepareSkills);
-        }
-*/
     }
-};
+    ;
 
 var educations = {
     "schools": [
@@ -108,17 +108,19 @@ var work = {
     "jobs": [
         {
             "employer": "Centre suisse de cartographie de la faune (CSCF)",
+            "link": "http://www.cscf.ch",
             "title": "Scientific collaborator",
             "location": "Neuchâtel, Switzerland",
-            "dates": "2003-now",
-            "description": "My job at the CSCF is based around..."
+            "dates": "2003 - now",
+            "description": "The objectives of the Centre suisse de cartographie de la faune (CSCF, translated as Swiss center for faunal cartography) is to collect, analyze and share species distribution and ecological information data of animal species in Switzerland. There, I' m in charge of data analysis (species distribution models, sampling design), GIS analysis and the development of web apps to collect and share distribution data."
         },
         {
             "employer": "Centre de coordination pour la protection des amphibiens et des reptiles de Suisse (karch)",
+            "link": "http://www.karch.ch",
             "title": "Scientific collaborator",
             "location": "Bern, Switzerland",
             "dates": "2003 - 2006",
-            "description": "My job at the karch was based around..."
+            "description": "The objectives of the karch are similar to those of the CSCF. The two foundations merged in 2006. There, I was in charge of GIS analysis and Oracle database mangement."
         }
     ],
     display: function () {
@@ -126,6 +128,7 @@ var work = {
         for (job in work.jobs) {
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedWorkLink = HTMLworkLink.replace("%data%", work.jobs[job].link);
             var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
@@ -134,6 +137,7 @@ var work = {
             $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
             $(".work-entry:last").append(formattedWorkDates);
             $(".work-entry:last").append(formattedWorkLocation);
+            $(".work-entry:last").append(formattedWorkLink);
             $(".work-entry:last").append(formattedWorkDescription);
 
         }
