@@ -1,13 +1,3 @@
-/**
- * Variables, especially jquery selectors, often repeted in the code.
- */
-
-var headers = $("#header");
-var topContacts = $("#topContacts");
-var lastEduEntry = $(".education-entry:last");
-var lastWorkEntry = $(".work-entry:last");
-var lastProjEntry = $(".project-entry:last");
-
 var bio = {
     "name": "Fabien Fivaz",
     "role": "Scientific collaborator",
@@ -50,16 +40,16 @@ var bio = {
         formattedGithub = formattedGithub.replace("%name%", bio.contacts.github.name);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-        headers.prepend(formattedLocation);
-        headers.prepend(formattedName);
-        headers.prepend(formattedBiopic);
+        $("#header").prepend(formattedLocation);
+        $("#header").prepend(formattedName);
+        $("#header").prepend(formattedBiopic);
 
-        topContacts.append(formattedGithub);
-        topContacts.append(formattedTwitter);
-        topContacts.append(formattedEmail);
+        $("#topContacts").append(formattedGithub);
+        $("#topContacts").append(formattedTwitter);
+        $("#topContacts").append(formattedEmail);
         $("#skillText").prepend(formattedSkillText);
 
-        headers.append('<div id="navbar-anchor"></div>');
+        $("#header").append('<div id="navbar-anchor"></div>');
 
         function prepareSkills(skill) {
             var formattedSkill = HTMLskills.replace("%data%", skill);
@@ -105,11 +95,11 @@ var educations = {
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", educations.schools[school].description);
 
             $("#education").append(HTMLschoolStart);
-            lastEduEntry.append(formattedSchoolDegree);
-            lastEduEntry.append(formattedSchoolname);
-            lastEduEntry.append(formattedSchoolDates);
-            lastEduEntry.append(formattedSchoolLocation);
-            lastEduEntry.append(formattedSchoolMajor);
+            $(".education-entry:last").append(formattedSchoolDegree);
+            $(".education-entry:last").append(formattedSchoolname);
+            $(".education-entry:last").append(formattedSchoolDates);
+            $(".education-entry:last").append(formattedSchoolLocation);
+            $(".education-entry:last").append(formattedSchoolMajor);
         }
     }
 };
@@ -156,11 +146,11 @@ var work = {
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
             $("#workExperience").append(HTMLworkStart);
-            lastWorkEntry.append(formattedWorkEmployer + formattedWorkTitle);
-            lastWorkEntry.append(formattedWorkDates);
-            lastWorkEntry.append(formattedWorkLocation);
-            lastWorkEntry.append(formattedWorkLink);
-            lastWorkEntry.append(formattedWorkDescription);
+            $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
+            $(".work-entry:last").append(formattedWorkDates);
+            $(".work-entry:last").append(formattedWorkLocation);
+            $(".work-entry:last").append(formattedWorkLink);
+            $(".work-entry:last").append(formattedWorkDescription);
         }
     }
 };
@@ -198,13 +188,13 @@ var projects =
             var formattedProjectsDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             var formattedProjectsDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 
-            lastProjEntry.append(formattedProjectsTitle);
-            lastProjEntry.append(formattedProjectsDates);
-            lastProjEntry.append(formattedProjectsDescription);
+            $(".project-entry:last").append(formattedProjectsTitle);
+            $(".project-entry:last").append(formattedProjectsDates);
+            $(".project-entry:last").append(formattedProjectsDescription);
 
             for (var image in projects.projects[project].images) {
                 var formattedProjectsImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                lastProjEntry.append(formattedProjectsImages);
+                $(".project-entry:last").append(formattedProjectsImages);
             }
         }
     }
