@@ -4,13 +4,13 @@ replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic text-center">';
-var HTMLlocation = '<p class="text-center"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
-var HTMLemail = '<li class="flex-item"><span class="desc-text">Email: </span> <a href="%link%" class="black-text">%name%</a></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="desc-text">Twitter: </span> <a href="%link%" class="black-text">%name%</a></li>';
-var HTMLgithub = '<li class="flex-item"><span class="desc-text">Github: </span> </span> <a href="%link%" class="black-text">%name%</a></li>';
-var HTMLblog = '<li class="flex-item"><span class="desc-text">Blog: </span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLlocation = '<p class="text-center loc"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
+var HTMLemail = '<li class="flex-item"><a href="%link%" class="black-text">%name%</a></li>';
+var HTMLtwitter = '<li class="flex-item"><a href="%link%" class="black-text">%name%</a></li>';
+var HTMLgithub = '<li class="flex-item"></span> <a href="%link%" class="black-text">%name%</a></li>';
+var HTMLblog = '<li class="flex-item"><a href="%link%" class="black-text">%name%</a></li>';
 var HTMLSkillText = '<p>%data%</p>';
-var HTMLskills = '<li class="flex-item">%data%</span></li>';
+var HTMLskills = '<li class="flex-item-black">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<h3>%data%<br>';
@@ -21,17 +21,17 @@ var HTMLworkLocation = '<div class="location-text"><span class="glyphicon glyphi
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<h3>%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolDegree = '<h3>%data%</h3>';
+var HTMLschoolName = '<div><span class="glyphicon glyphicon-home"></span> %data%</div>';
+var HTMLschoolDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
+var HTMLschoolLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
+var HTMLschoolMajor = '<p><br>%data%</p>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';

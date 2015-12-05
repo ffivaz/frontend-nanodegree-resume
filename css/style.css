@@ -1,8 +1,13 @@
 * {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     text-align: center;
+}
+
+.container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 h1 {
@@ -11,12 +16,11 @@ h1 {
 
 h2 {
     font-weight: 100;
-    color: #000000;
-    border-top: 1px solid black;
-    padding-top: 15px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    color: #000;
+    border-top: 1px solid #000;
+    padding-top: 40px;
+    width: 75%;
+    margin: 40px auto 0 auto;
 }
 
 h3 {
@@ -28,24 +32,12 @@ h3 small {
     font-size: 12px;
 }
 
-.large-margin {
-    padding: 10px 50px 10px 50px;
-}
-
-.transparent-top {
-    opacity: 0;
-    height: 33vh;
-}
-
-.transparent-bottom {
-    opacity: 0;
-    height: 7vh;
+#header {
+    border-top: 1px solid #fff;
 }
 
 .black-wrapper {
     background: #000;
-    color: lightgrey;
-    padding-bottom: 60px;
 }
 
 .white-wrapper {
@@ -53,7 +45,11 @@ h3 small {
 }
 
 .grey-wrapper {
-    background: lightgrey;
+    background: #d3d3d3;
+}
+
+.loc {
+    color: #d3d3d3;
 }
 
 .navbar-inverse {
@@ -69,11 +65,6 @@ h3 small {
 
 .bg-image-wedding {
     background-image: url(../images/background_large.jpg);
-
-    -ms-background-position-x: center;
-    -ms-background-position-y: bottom;
-    background-position: center bottom;
-
     background-size: cover;
 }
 
@@ -94,6 +85,33 @@ h3 small {
     .black-wrapper h1 {
         font-size: 28px;
         color: lightgrey;
+    }
+
+    .navbar {
+        border-radius: 0;
+        border: 0;
+        display: flex;
+        margin-bottom: 0;
+        z-index: 9999;
+    }
+
+    .navbar .navbar-nav {
+        display: inline-flex;
+        float: none;
+        vertical-align: top;
+    }
+
+    .flex-container {
+        display: flex;
+        padding: 10px 12vw 10px 12vw;
+        justify-content: space-between;
+    }
+
+    .flex-container-large {
+        display: flex;
+        padding: 0 1vw 0 1vw;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -125,32 +143,46 @@ h3 small {
     }
 
     .navbar .navbar-nav {
-        display: inline-block;
+        display: inline-flex;
         float: none;
         vertical-align: top;
     }
+
     .row {
         margin-bottom: 0;
+    }
+
+    .flex-container {
+        display: flex;
+        padding: 10px 33vw 10px 33vw;
+        justify-content: space-between;
+    }
+
+    .flex-container-large {
+        display: flex;
+        padding: 0 12vw 0 12vw;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
 .desc-text {
     font-weight: 700;
-    color: #000;
-}
-
-.flex-container {
-    display: flex;
-    padding: 20px 20px 0 20px;
-    justify-content: space-between;
+    color: lightgrey;
 }
 
 .flex-item {
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    color: #000;
+    color: lightgrey;
+}
 
+.flex-item-black {
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    color: #000;
 }
 
 .stick {
@@ -159,35 +191,6 @@ h3 small {
     z-index: 10000;
     width: 100%;
 }
-
-/* Offsetting solution found here ; http://nicolasgallagher.com/jump-links-and-viewport-positioning/ */
-.jumptarget {
-    position: relative;
-    border-top: 25px solid transparent;
-    margin: -50px 0 0;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-}
-
-.jumptarget:before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    border-top: 2px solid #ccc;
-}
-
-.jumpstart {
-     position: relative;
-     border-top: 25px solid transparent;
-     margin: -80px 0 0;
-     -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-     background-clip: padding-box;
-
- }
 
 #toTop{
     position: fixed;
@@ -198,10 +201,13 @@ h3 small {
     opacity: 0.5;
     border: 0;
     color: #fff;
-    z-index: 10000;
 }
 
 #toTop:hover {
     background-color: darkgray;
     opacity: 0.8;
+}
+
+#skillText {
+    padding-top: 30px;
 }

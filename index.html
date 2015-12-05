@@ -18,17 +18,16 @@
     <script src="js/functions.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar">
-<a id="top"></a>
 <div class="bg-image bg-image-wedding bg-center-bottom"></div>
-<div id="main" class="container-fluid">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12"></div>
-    </div>
-    <div class="row">
-        <div id="header" class="col-md-12 col-sm-12 col-xs-12 black-wrapper"></div>
+        <div id="header" class="col-md-12 col-sm-12 col-xs-12 black-wrapper">
+            <ul id="topContacts" class="flex-container"></ul>
+        </div>
     </div>
 </div>
-<div id="navbar-anchor"></div>
+
 <div class="navbar navbar-inverse" id="navbar">
     <div class="container-fluid">
         <ul class="nav navbar-nav" role="tablist">
@@ -36,45 +35,42 @@
             <li><a href="#project-anchor"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Projects</a></li>
             <li><a href="#education-anchor"><span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;Education</a>
             </li>
-            <li>
-                <div id="toTop" class="btn"><i class="glyphicon glyphicon-arrow-up"></i></div>
-            </li>
         </ul>
     </div>
 </div>
 
+<div class="container-fluid black-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 white-wrapper" id="bio">
+                <div id="skillText">
 
-<div class="container container-down">
-
-    <div class="row jumpstart">
-        <div class="col-md-12 col-sm-12 col-xs-12 white-wrapper" id="bio">
-            <ul id="topContacts" class="flex-container"></ul>
-            <ul id="skills" class="flex-container">
-                <li class="flex-item desc-text ">Skills at a Glance:</li>
-            </ul>
-            <div id="skillText"><br></div>
+                    <h3>Skills at a Glance</h3>
+                    <ul id="skills" class="flex-container-large"></ul>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="row jumptarget" id="work-anchor">
-        <div id="workExperience" class="col-md-12 col-sm12 col-xs-12 white-wrapper large-margin">
+<div class="container">
+
+    <div class="row" id="work-anchor">
+        <div id="workExperience" class="col-md-12 col-sm12 col-xs-12 white-wrapper">
             <h2>Work</h2>
         </div>
     </div>
 
-    <div class="row jumptarget" id="project-anchor">
-        <div id="projects" class="col-md-12 col-sm-12 col-xs-12 white-wrapper large-margin">
+    <div class="row" id="project-anchor">
+        <div id="projects" class="col-md-12 col-sm-12 col-xs-12 white-wrapper">
             <h2>Projects</h2>
         </div>
     </div>
 
-    <div class="row jumptarget" id="education-anchor">
-        <div id="education" class="col-md-12 col-sm-12 col-xs-12 white-wrapper large-margin">
+    <div class="row" id="education-anchor">
+        <div id="education" class="col-md-12 col-sm-12 col-xs-12 white-wrapper">
             <h2>Education</h2>
         </div>
-    </div>
-
-    <div class="row grey-wrapper transparent-bottom">
     </div>
 </div>
 

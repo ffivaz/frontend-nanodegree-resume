@@ -6,7 +6,7 @@ function sticky_relocate() {
     var div_top = $('#navbar-anchor').offset().top;
     if (window_top > div_top) {
         $('#navbar').addClass('stick');
-        $('#navbar').show();
+        $('#navbar').fadeIn('slow');
     } else {
         $('#navbar').removeClass('stick');
         $('#navbar').hide();
@@ -40,3 +40,9 @@ $( document ).ready(function() {
     });
 
 });
+
+/**
+ * Bottom progress bar
+ */
+
+$(window).scroll();
