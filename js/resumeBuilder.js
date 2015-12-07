@@ -11,6 +11,7 @@
 var bio = {
     "name": "Fabien Fivaz",
     "role": "Scientific collaborator",
+    "location": "La Chaux-de-Fonds, Switzerland",
     "contacts": {
         "email": {
             "name": "Email",
@@ -23,8 +24,7 @@ var bio = {
         "twitter": {
             "name": "Twitter",
             "link": "https://twitter.com/ffivaz"
-        },
-        "location": "La Chaux-de-Fonds, Switzerland"
+        }
     },
     "biopic": "images/fabien_fivaz_large.jpg",
     "skillText": "(1978-) Biologist, statistician, programmer. And politician. Long and solid experience in managing, " +
@@ -37,27 +37,36 @@ var bio = {
         "map servers"
     ],
     display: function () {
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-        var formattedSkillText = HTMLSkillText.replace("%data%", bio.skillText);
-        var formattedEmail = HTMLemail.replace("%link%", bio.contacts.email.link);
-        formattedEmail = formattedEmail.replace("%name%", bio.contacts.email.name);
-        var formattedTwitter = HTMLtwitter.replace("%link%", bio.contacts.twitter.link);
-        formattedTwitter = formattedTwitter.replace("%name%", bio.contacts.twitter.name);
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.link);
-        formattedGithub = formattedGithub.replace("%name%", bio.contacts.github.name);
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
+        var formattedName;
+        var formattedBiopic;
+        var formattedSkillText;
+        var formattedEmail;
+        var formattedTwitter;
+        var formattedGithub;
+        var formattedLocation;
+
+        formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
+        formattedName = HTMLheaderName.replace("%data%", bio.name);
+        formattedLocation = HTMLlocation.replace("%data%", bio.location);
         $("#header").prepend(formattedLocation);
         $("#header").prepend(formattedName);
         $("#header").prepend(formattedBiopic);
 
-        $("#topContacts").append(formattedGithub);
-        $("#topContacts").append(formattedTwitter);
+        formattedEmail = HTMLemail.replace("%link%", bio.contacts.email.link);
+        formattedEmail = formattedEmail.replace("%name%", bio.contacts.email.name);
         $("#topContacts").append(formattedEmail);
+        formattedTwitter = HTMLtwitter.replace("%link%", bio.contacts.twitter.link);
+        formattedTwitter = formattedTwitter.replace("%name%", bio.contacts.twitter.name);
+        $("#topContacts").append(formattedTwitter)
+        formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.link);
+        formattedGithub = formattedGithub.replace("%name%", bio.contacts.github.name);
+        $("#topContacts").append(formattedGithub);
+        ;
+
+        formattedSkillText = HTMLSkillText.replace("%data%", bio.skillText);
         $("#skillText").prepend(formattedSkillText);
 
-        $("#header").append('<div id="navbar-anchor"></div>');
 
         function prepareSkills(skill) {
             var formattedSkill = HTMLskills.replace("%data%", skill);
@@ -99,19 +108,26 @@ var educations = {
         }
     ],
     display: function () {
-        for (var school in educations.schools) {
-            var formattedSchoolname = HTMLschoolName.replace("%data%", educations.schools[school].name);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", educations.schools[school].degree);
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", educations.schools[school].dates);
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", educations.schools[school].location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", educations.schools[school].description);
 
+        var school;
+        var formattedSchoolname;
+        var formattedSchoolDegree;
+        var formattedSchoolDates;
+        var formattedSchoolLocation;
+        var formattedSchoolDesc;
+
+        for (school in educations.schools) {
             $("#education").append(HTMLschoolStart);
+            formattedSchoolDegree = HTMLschoolDegree.replace("%data%", educations.schools[school].degree);
             $(".education-entry:last").append(formattedSchoolDegree);
+            formattedSchoolname = HTMLschoolName.replace("%data%", educations.schools[school].name);
             $(".education-entry:last").append(formattedSchoolname);
+            formattedSchoolDates = HTMLschoolDates.replace("%data%", educations.schools[school].dates);
             $(".education-entry:last").append(formattedSchoolDates);
+            formattedSchoolLocation = HTMLschoolLocation.replace("%data%", educations.schools[school].location);
             $(".education-entry:last").append(formattedSchoolLocation);
-            $(".education-entry:last").append(formattedSchoolMajor);
+            formattedSchoolDesc = HTMLschoolDesc.replace("%data%", educations.schools[school].description);
+            $(".education-entry:last").append(formattedSchoolDesc);
         }
     }
 };
@@ -152,20 +168,26 @@ var work = {
     ],
     display: function () {
 
-        for (var job in work.jobs) {
-            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-            var formattedWorkLink = HTMLworkLink.replace("%link%", work.jobs[job].link.link);
-            formattedWorkLink = formattedWorkLink.replace("%name%", work.jobs[job].link.name);
-            var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-            var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        var formattedWorkEmployer;
+        var formattedWorkTitle;
+        var formattedWorkLink;
+        var formattedWorkDates;
+        var formattedWorkLocation;
+        var formattedWorkDescription;
 
-            $("#workExperience").append(HTMLworkStart);
+        for (var job in work.jobs) {
+            $("#work").append(HTMLworkStart);
+            formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
             $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
+            formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
             $(".work-entry:last").append(formattedWorkDates);
+            formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
             $(".work-entry:last").append(formattedWorkLocation);
+            formattedWorkLink = HTMLworkLink.replace("%link%", work.jobs[job].link.link);
+            formattedWorkLink = formattedWorkLink.replace("%name%", work.jobs[job].link.name);
             $(".work-entry:last").append(formattedWorkLink);
+            formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
             $(".work-entry:last").append(formattedWorkDescription);
         }
     }
@@ -199,9 +221,11 @@ var projects =
         {
             "title": "Web server and app : distribution of species",
             "dates": "2006 - now",
-            "description": "The *species distribution server* of the CSCF is the most used way for people " +
-            "(professionals or public) to consult our data. To make it work, I set up a linux server with " +
-            "Apache, MySQL and mapserver. I then wrote the code to ",
+            "description": "The <em>species distribution server</em> of the CSCF is the first place for " +
+            "professionals or the public to consult the center's data. The backend is a " +
+            "LAMP server with MySQL delivering data to <em>mapserver</em> for maps. The frontend " +
+            "is written in PHP with <em>OpenLayers</em> used for data visualization. Its multilingual interface is clean " +
+            "and fast.",
             "keywords": "Web app, Mapserver, LAMP",
             "publishedAs": "",
             "link": {
@@ -211,24 +235,32 @@ var projects =
         }
     ],
     display: function () {
+
+        var formattedProjectsTitle;
+        var formattedProjectsDates;
+        var formattedProjectsKeywords;
+        var formattedProjectsPub;
+        var formattedProjectsLink;
+        var formattedProjectsDescription;
+
         for (var project in projects.projects) {
             $("#projects").append(HTMLprojectStart);
-            var formattedProjectsTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+            formattedProjectsTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             $(".project-entry:last").append(formattedProjectsTitle);
-            var formattedProjectsDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+            formattedProjectsDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             $(".project-entry:last").append(formattedProjectsDates);
-            var formattedProjectsKeywords = HTMLprojectKeywords.replace("%data%", projects.projects[project].keywords);
+            formattedProjectsKeywords = HTMLprojectKeywords.replace("%data%", projects.projects[project].keywords);
             $(".project-entry:last").append(formattedProjectsKeywords);
             if (projects.projects[project].publishedAs != "") {
-                var formattedProjectsPub = HTMLprojectPub.replace("%data%", projects.projects[project].publishedAs);
+                formattedProjectsPub = HTMLprojectPub.replace("%data%", projects.projects[project].publishedAs);
                 $(".project-entry:last").append(formattedProjectsPub);
             }
-            if (projects.projects[project].link.link !="") {
-                var formattedProjectsLink = HTMLprojectLink.replace("%link%", projects.projects[project].link.link);
+            if (projects.projects[project].link.link != "") {
+                formattedProjectsLink = HTMLprojectLink.replace("%link%", projects.projects[project].link.link);
                 formattedProjectsLink = formattedProjectsLink.replace("%name%", projects.projects[project].link.name);
                 $(".project-entry:last").append(formattedProjectsLink);
             }
-            var formattedProjectsDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+            formattedProjectsDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
             $(".project-entry:last").append(formattedProjectsDescription);
         }
     }

@@ -2,9 +2,9 @@
  * Helpers
  */
 
-var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
+var HTMLheaderName = '<h1 class="text-center">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic text-center">';
-var HTMLlocation = '<p class="text-center loc"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
+var HTMLlocation = '<p class="text-white"><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
 var HTMLemail = '<li class="flex-item"><a href="%link%" class="black-text">%name%</a></li>';
 var HTMLtwitter = '<li class="flex-item"><a href="%link%" class="black-text">%name%</a></li>';
 var HTMLgithub = '<li class="flex-item"></span> <a href="%link%" class="black-text">%name%</a></li>';
@@ -15,13 +15,13 @@ var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<h3>%data%<br>';
 var HTMLworkTitle = ' <small>%data%</small></h3>';
 var HTMLworkLink = '<span class="glyphicon glyphicon-link"></span> <a href="%link%">%name%</a>';
-var HTMLworkDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
-var HTMLworkLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
+var HTMLworkDates = '<p><span class="glyphicon glyphicon-calendar"></span> %data%</p>';
+var HTMLworkLocation = '<p><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<h3>%data%</h3>';
-var HTMLprojectDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
+var HTMLprojectDates = '<p><span class="glyphicon glyphicon-calendar"></span> %data%</p>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectPub = '<p><span class="glyphicon glyphicon-paperclip"></span> %data%</p>';
 var HTMLprojectKeywords = '<p><span class="glyphicon glyphicon-pushpin"></span> %data%</p>';
@@ -29,14 +29,12 @@ var HTMLprojectLink = '<p><span class="glyphicon glyphicon-link"></span> <a href
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolDegree = '<h3>%data%</h3>';
-var HTMLschoolName = '<div><span class="glyphicon glyphicon-home"></span> %data%</div>';
-var HTMLschoolDates = '<div class="date-text"><span class="glyphicon glyphicon-calendar"></span> %data%</div>';
-var HTMLschoolLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
-var HTMLschoolMajor = '<p><br>%data%</p>';
+var HTMLschoolName = '<p><span class="glyphicon glyphicon-home"></span> %data%</p>';
+var HTMLschoolDates = '<p><span class="glyphicon glyphicon-calendar"></span> %data%</p>';
+var HTMLschoolLocation = '<p><span class="glyphicon glyphicon-map-marker"></span> %data%</p>';
+var HTMLschoolDesc = '<p><br>%data%</p>';
 
-var HTMLfooter = '<p class="loc"><br><small>%data%</small></p>';
-
-var googleMap = '<div id="map"></div>';
+var HTMLfooter = '<p class="text-white"><br><small>%data%</small></p>';
 
 /*
  This is the fun part. Here's where we generate the custom Google Map for the website.
@@ -73,7 +71,7 @@ function initializeMap() {
         var locations = [];
 
         // adds the single location property from bio to the locations array
-        locations.push(bio.contacts.location);
+        locations.push(bio.location);
 
         // iterates through school locations and appends each location to
         // the locations array

@@ -5,6 +5,14 @@
     text-align: center;
 }
 
+.black-wrapper {
+    background: #000;
+}
+
+.white-wrapper {
+    background: #fff;
+}
+
 h1 {
     font-weight: 100;
 }
@@ -27,35 +35,61 @@ h3 small {
     font-size: 12px;
 }
 
+p {
+    margin: 0;
+}
+
 #header {
     border-top: 1px solid #fff;
 }
 
-.black-wrapper {
-    background: #000;
-}
-
-.white-wrapper {
-    background: #fff;
-}
-
-.grey-wrapper {
-    background: #d3d3d3;
-}
-
-.loc {
-    color: #d3d3d3;
-}
-
-.navbar-inverse {
-    background-color: #000;
-}
-
 /* The fixed background image hack is inspired from https://css-tricks.com/crop-top/ */
-
 .bg-image {
     height: 33vw;
     width: 100%;
+}
+
+.navbar {
+    border-radius: 0;
+    border: 0;
+    display: flex;
+    margin-bottom: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-nav {
+    display: inline-flex;
+    float: none;
+    vertical-align: top;
+}
+
+.flex-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    color: #d3d3d3;
+}
+
+.flex-item-black {
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    color: #000;
+}
+
+.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+}
+
+#skillText {
+    padding-top: 30px;
+}
+
+.text-white {
+    color: #d3d3d3;
 }
 
 @media only screen and (max-width: 768px) {
@@ -66,10 +100,6 @@ h3 small {
     .bg-image-wedding {
         background-image: url(../images/background_small.jpg);
         background-size: cover;
-    }
-
-    #bio-wrapper {
-        padding: 0;
     }
 
     .biopic {
@@ -83,21 +113,15 @@ h3 small {
 
     .black-wrapper h1 {
         font-size: 28px;
-        color: lightgrey;
+        color: #d3d3d3;
     }
 
-    .navbar {
-        border-radius: 0;
-        border: 0;
-        display: flex;
-        margin-bottom: 0;
-        z-index: 9999;
+    #bio-wrapper {
+        padding: 0;
     }
 
-    .navbar .navbar-nav {
-        display: inline-flex;
-        float: none;
-        vertical-align: top;
+    #map {
+        height: 33vh;
     }
 
     .flex-container {
@@ -117,7 +141,7 @@ h3 small {
 @media only screen and (min-width: 768px) {
     body {
         position: relative;
-        background-color: lightgray;
+        background-color: #d3d3d3;
     }
 
     .bg-image-wedding {
@@ -135,25 +159,12 @@ h3 small {
 
     .black-wrapper h1 {
         font-size: 40px;
-        color: lightgrey;
+        color: #d3d3d3;
     }
 
-    .navbar {
-        border-radius: 0;
-        border: 0;
-        display: flex;
-        margin-bottom: 0;
-        z-index: 9999;
-    }
-
-    .navbar .navbar-nav {
-        display: inline-flex;
-        float: none;
-        vertical-align: top;
-    }
-
-    .row {
-        margin-bottom: 0;
+    #map {
+        height: 33vh;
+        margin: 0 -15px 0 -15px;
     }
 
     .flex-container {
@@ -168,50 +179,4 @@ h3 small {
         justify-content: space-between;
         align-items: center;
     }
-}
-
-.desc-text {
-    font-weight: 700;
-    color: lightgrey;
-}
-
-.flex-item {
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style-type: none;
-    color: lightgrey;
-}
-
-.flex-item-black {
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style-type: none;
-    color: #000;
-}
-
-.stick {
-    position: fixed;
-    top: 0;
-    z-index: 10000;
-    width: 100%;
-}
-
-#toTop{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background-color: darkgray;
-    opacity: 0.5;
-    border: 0;
-    color: #fff;
-}
-
-#toTop:hover {
-    background-color: darkgray;
-    opacity: 0.8;
-}
-
-#skillText {
-    padding-top: 30px;
 }
