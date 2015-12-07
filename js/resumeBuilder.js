@@ -177,7 +177,7 @@ var work = {
                 .append(formattedWorkDates)
                 .append(formattedWorkLocation)
                 .append(formattedWorkLink)
-                .append(formattedWorkDescription)
+                .append(formattedWorkDescription);
         }
 
         work.jobs.forEach(prepareWorkSection);
@@ -233,22 +233,25 @@ var projects = {
             var formattedProjectsTitle = HTMLprojectTitle.replace("%data%", project.title);
             var formattedProjectsDates = HTMLprojectDates.replace("%data%", project.dates);
             var formattedProjectsKeywords = HTMLprojectKeywords.replace("%data%", project.keywords);
-            if (project.publishedAs !== "") {
-                var formattedProjectsPub = HTMLprojectPub.replace("%data%", project.publishedAs);
-            }
-            if (project.link.link !== "") {
-                var formattedProjectsLink = HTMLprojectLink.replace("%link%", project.link.link)
-                    .replace("%name%", project.link.name);
-            }
             var formattedProjectsDescription = HTMLprojectDescription.replace("%data%", project.description);
 
             $("#projects").append(HTMLprojectStart);
             $(".project-entry:last").append(formattedProjectsTitle)
                 .append(formattedProjectsDates)
-                .append(formattedProjectsKeywords)
-                .append(formattedProjectsPub)
-                .append(formattedProjectsLink)
-                .append(formattedProjectsDescription)
+                .append(formattedProjectsKeywords);
+
+            if (project.publishedAs !== "") {
+                var formattedProjectsPub = HTMLprojectPub.replace("%data%", project.publishedAs);
+                $(".project-entry:last").append(formattedProjectsPub);
+            }
+
+            if (project.link.link !== "") {
+                var formattedProjectsLink = HTMLprojectLink.replace("%link%", project.link.link)
+                    .replace("%name%", project.link.name);
+                $(".project-entry:last").append(formattedProjectsLink);
+            }
+
+            $(".project-entry:last").append(formattedProjectsDescription);
         }
 
         projects.projects.forEach(prepareProjectSections);
