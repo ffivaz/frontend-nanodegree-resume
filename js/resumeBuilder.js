@@ -17,11 +17,9 @@ var bio = {
         "location": "La Chaux-de-Fonds, Switzerland"
     },
     "biopic": "images/fabien_fivaz_large.jpg",
-    "skillText": "As a biologist and statistician, I have a long and solid experience in managing " +
-    "and analyzing very large datasets of ecological data using a wide range of tools: databases, " +
-    "GIS software and statistical software. I focus on spatial ecology and species distributions " +
-    "for biodiversity conservation. I've been recently involved with a lot of software development for " +
-    "the web.",
+    "skillText": "(1978-) Biologist, statistician, programmer. And politician. Long and solid experience in managing, " +
+    "analyzing and presenting very large datasets of ecological data using a wide range of tools: databases, " +
+    "GIS and statistical software, web apps. Elected member of the state parliament.",
     "skills": [
         "modelling",
         "data mining",
@@ -114,11 +112,11 @@ var work = {
             },
             "title": "Scientific collaborator",
             "location": "Neuchâtel, Switzerland",
-            "dates": "2003 - now",
+            "dates": "2006 - now",
             "description": "The goals of the Centre suisse de cartographie de la faune (CSCF, " +
             "translated as Swiss center for faunal cartography) is to collect, analyze and share " +
             "species distribution and ecological information data of animal species in Switzerland. " +
-            "There, I' m in charge of data analysis (species distribution models, sampling design), " +
+            "There, I'm in charge of data analysis (species distribution models, sampling design), " +
             "GIS analysis and the development of web apps to collect and share distribution data."
         },
         {
@@ -161,41 +159,55 @@ var projects =
         {
             "title": "Red Lists of endangered species",
             "dates": "2006 - now",
-            "description": "",
-            "images": [
-                "images/197x148.gif",
-                "images/197x148.gif"
-            ],
-            "publishedAs": ""
+            "description": "Red Lists have been used for years to " +
+            "highlight species that need special attention because of the rarity or rapid decline of their " +
+            "populations. The International Union for Conservation of Nature (IUCN) defined categories of " +
+            "threat, and criteria to attribute taxa to these categories. The strict application " +
+            "of the criteria is not always straightforward, especially for invertebrates, because of the difficulties " +
+            "associated with precise estimates of the size and viability of their populations. We developed a method to " +
+            "estimate the extent of occurrence (EOO) and area of occupancy (AOO) based on species distribution models " +
+            "using multivariate adaptive regression splines.",
+            "keywords": "Data analysis, Modelling, Biodiversity, Conservation",
+            "publishedAs": "F. Fivaz & Y. Gonseth. 2014. <em>Using species distribution models for IUCN Red Lists of threatened species</em>. Journal of Insect Conservation 18: 427-436.",
+            "link": {
+                "name": "",
+                "link": ""
+            }
         },
         {
-            "title": "Web server : distribution of species",
+            "title": "Web server and app : distribution of species",
             "dates": "2006 - now",
             "description": "The *species distribution server* of the CSCF is the most used way for people " +
             "(professionals or public) to consult our data. To make it work, I set up a linux server with " +
             "Apache, MySQL and mapserver. I then wrote the code to ",
-            "images": [
-                "images/197x148.gif",
-                "images/197x148.gif"
-            ],
-            "publishedAs": ""
+            "keywords": "Web app, Mapserver, LAMP",
+            "publishedAs": "",
+            "link": {
+                "name": "lepus.unine.ch/carto",
+                "link": "http://lepus.unine.ch/carto"
+            }
         }
     ],
     display: function () {
         for (var project in projects.projects) {
             $("#projects").append(HTMLprojectStart);
             var formattedProjectsTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-            var formattedProjectsDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-            var formattedProjectsDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-
             $(".project-entry:last").append(formattedProjectsTitle);
+            var formattedProjectsDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             $(".project-entry:last").append(formattedProjectsDates);
-            $(".project-entry:last").append(formattedProjectsDescription);
-
-            for (var image in projects.projects[project].images) {
-                var formattedProjectsImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                $(".project-entry:last").append(formattedProjectsImages);
+            var formattedProjectsKeywords = HTMLprojectKeywords.replace("%data%", projects.projects[project].keywords);
+            $(".project-entry:last").append(formattedProjectsKeywords);
+            if (projects.projects[project].publishedAs != "") {
+                var formattedProjectsPub = HTMLprojectPub.replace("%data%", projects.projects[project].publishedAs);
+                $(".project-entry:last").append(formattedProjectsPub);
             }
+            if (projects.projects[project].link.link !="") {
+                var formattedProjectsLink = HTMLprojectLink.replace("%link%", projects.projects[project].link.link);
+                formattedProjectsLink = formattedProjectsLink.replace("%name%", projects.projects[project].link.name);
+                $(".project-entry:last").append(formattedProjectsLink);
+            }
+            var formattedProjectsDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+            $(".project-entry:last").append(formattedProjectsDescription);
         }
     }
 };
