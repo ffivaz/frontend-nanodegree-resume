@@ -5,11 +5,11 @@ function sticky_relocate() {
     var window_top = $(window).scrollTop();
     var div_top = $('#navbar-anchor').offset().top;
     if (window_top > div_top) {
-        $('#navbar').addClass('stick');
-        $('#navbar').fadeIn('slow');
+        $('#navbar').addClass('stick')
+            .fadeIn('slow');
     } else {
-        $('#navbar').removeClass('stick');
-        $('#navbar').hide();
+        $('#navbar').removeClass('stick')
+            .hide();
     }
 }
 
