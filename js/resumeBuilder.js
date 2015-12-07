@@ -1,3 +1,13 @@
+/**
+ * This is resumeBuilder.js. It packs all data and writes the final elements in index.html
+ *
+ * Every section (bio, work, projects, education and footer) is a single variable with data and the function
+ * to display this data. So for instance the function bio.display() fills the DOM with bio information.
+ */
+
+/**
+ * This is the first section with pic, name, loc, contacts, and skills.
+ */
 var bio = {
     "name": "Fabien Fivaz",
     "role": "Scientific collaborator",
@@ -60,6 +70,10 @@ var bio = {
     }
 };
 
+/**
+ * This is the education section
+ */
+
 var educations = {
     "schools": [
         {
@@ -101,6 +115,10 @@ var educations = {
         }
     }
 };
+
+/**
+ * This is the work section
+ */
 
 var work = {
     "jobs": [
@@ -152,6 +170,10 @@ var work = {
         }
     }
 };
+
+/**
+ * This is the projects section
+ */
 
 var projects =
 {
@@ -212,10 +234,27 @@ var projects =
     }
 };
 
+/**
+ * This is the footer
+ */
+
+var footer = {
+    "text": "This is a Udacity FEND project",
+    display: function () {
+        var formattedFooter = HTMLfooter.replace("%data%", footer.text);
+        $("#footer").append(formattedFooter);
+    }
+};
+
+/**
+ * This is the section were all functions are run
+ */
+
 bio.display();
 projects.display();
 educations.display();
 work.display();
+footer.display();
 
 $("#mapDiv").append(googleMap);
 

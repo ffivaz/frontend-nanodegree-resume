@@ -34,14 +34,9 @@ var HTMLschoolDates = '<div class="date-text"><span class="glyphicon glyphicon-c
 var HTMLschoolLocation = '<div class="location-text"><span class="glyphicon glyphicon-map-marker"></span> %data%</div>';
 var HTMLschoolMajor = '<p><br>%data%</p>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLfooter = '<p class="loc"><br><small>%data%</small></p>';
 
 var googleMap = '<div id="map"></div>';
-
 
 /*
  This is the fun part. Here's where we generate the custom Google Map for the website.

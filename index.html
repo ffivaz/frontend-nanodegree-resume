@@ -7,11 +7,11 @@
     <title>Fabien Fivaz | Resume</title>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700,700italic' rel='stylesheet'>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="js/helper.js"></script>
     <script src="js/functions.js"></script>
@@ -74,38 +74,10 @@
 
 <div class="container-fluid black-wrapper">
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12"  id="footer">
-            <p class="loc"><br>
-                <small>This is a Udacity FEND project</small>
-                </p>
-        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12"  id="footer"></div>
     </div>
 </div>
 
 <script src="js/resumeBuilder.js"></script>
-<script type="text/javascript">
-
-    if (document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('topContacts').style.display = 'none';
-    }
-    if (document.getElementsByTagName('h1').length === 0) {
-        document.getElementById('header').style.display = 'none';
-    }
-    if (document.getElementsByClassName('work-entry').length === 0) {
-        document.getElementById('workExperience').style.display = 'none';
-    }
-    if (document.getElementsByClassName('project-entry').length === 0) {
-        document.getElementById('projects').style.display = 'none';
-    }
-    if (document.getElementsByClassName('education-entry').length === 0) {
-        document.getElementById('education').style.display = 'none';
-    }
-    if (document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('lets-connect').style.backgroundColor = 'black';
-    }
-    if (document.getElementById('map') === null) {
-        document.getElementById('mapDiv').style.display = 'none';
-    }
-</script>
 </body>
 </html>
