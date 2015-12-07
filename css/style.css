@@ -68,6 +68,10 @@ p {
     vertical-align: top;
 }
 
+.navbar-inverse {
+    background-color: #000;
+}
+
 .flex-item {
     flex-direction: row;
     flex-wrap: wrap;
